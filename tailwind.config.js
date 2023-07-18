@@ -12,6 +12,12 @@ module.exports = {
         title: ['var(--font-title)'],
       },
       colors: {
+        oliva: '#606c38',
+        crema: '#fefae0',
+        marron: '#dda15e',
+        ladrillo: '#bc6c25',
+        textos: '#353535',
+        titulos: '#212529',
       },
     },
   },
