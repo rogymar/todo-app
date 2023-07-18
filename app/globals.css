@@ -4,10 +4,10 @@
 
 h1, h2, h3 {
   font-family: var(--font-title);
-  color: #212529;
+  color: #463f3a;
 }
 
 p {
   font-family: var(--font-text);
-  color: #353535;
+  color: #66666e;
 }
