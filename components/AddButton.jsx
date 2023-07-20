@@ -6,8 +6,9 @@ import addPlus from "@/public/add.svg";
 
 export function AddButton() {
   return (
-      <button className='flex gap-3 items-center justify-center bg-gris text-white p-2 rounded-lg my-4 hover:bg-verde hover:text-gris'>
-        <Image src={addPlus} alt="plus-icon" className="w-6 h-6" />
-        New Task </button>
+    <button className="flex gap-3 items-center justify-center bg-gris text-turquesa p-4 rounded-lg my-3 hover:bg-verde hover:text-texto">
+      <Image src={addPlus} alt="plus-icon" className="w-6 h-6" />
+      New Task
+    </button>
   );
 }

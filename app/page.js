@@ -3,19 +3,11 @@ import Image from 'next/image'
 // Components
 import { AddButton } from '@/components/AddButton'
 import { Counter } from '@/components/Counter'
-import { Item } from '@/components/Item'
 import { Searcher } from '@/components/Searcher'
-import { TodoList } from '@/components/TodoList'
+import { TaskBox } from '@/components/Tasks/TaskBox'
 
 //Images
 import principal from '@/public/principal.png'
-
-const tasks = [
-  { text: 'Holi', completed: false },
-  { text: 'Plo', completed: false },
-  { text: 'Oli', completed: false },
-  { text: 'Feo', completed: false },
-]
 
 export default function Home() {
   return (
@@ -28,14 +20,7 @@ export default function Home() {
       <div className='w-full'>
         <Searcher />
         <AddButton />
-        <TodoList>
-          {tasks.map(task => (
-            <Item
-              key={task.text}
-              text={task.text}
-              completed={task.completed} />
-          ))}
-        </TodoList>
+        <TaskBox />
       </div>
     </main>
   )

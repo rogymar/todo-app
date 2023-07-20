@@ -1,3 +1,4 @@
+import { Footer } from '@/components/Footer'
 import './globals.css'
 
 //Fonts
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${oswald.variable} ${raleway.variable}`}>
       <body>
         {children}
+        <Footer />
       </body>
     </html>
   )
