@@ -1,34 +1,40 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 
 //SVG
 import equis from "@/public/delete.svg";
-import check from "@/public/check.svg";
-import edit from "@/public/edit.svg";
-import { CustomButton } from "../CustomButton";
+import pencil from "@/public/edit.svg";
+import checkWhite from "@/public/check-white.svg";
+import checkColor from "@/public/check-color.svg";
 
-export function Task({ text, completed, remove }) {
+export function Task({ text, completed, onComplete, onDelete, onEdit }) {
   return (
-    <div className="bg-white m-2 flex justify-between items-center">
-      <ul class="m-1">
-        <li class="p-2 flex gap-5 items-center rounded-sm">
-          <input
-            type="checkbox"
-            id={text}
-            class="h-5 w-5 border-2 border-turquesa peer appearance-none rounded-md checked:bg-turquesa checked:border-none after:bg-check after:bg-center after:bg-no-repeat l hover:ring hover:ring-turquesa"
-          />
-          <label
-            for={text}
-            class="w-full cursor-pointer font-medium text-texto peer-checked:text-gris peer-checked:line-through"
-          >
-            {text}
-          </label>
-        </li>
-      </ul>
-      <div className="flex justify-between items-center gap-1 mx-2">
-        <CustomButton img={edit} descrip='edit-button' />
-        <CustomButton img={equis} descrip='remove-button' />
+    <li className="bg-white flex gap-3 items-center px-2 py-1 my-2 rounded-sm">
+      <button className="peer" onClick={onComplete}>
+        {completed ? (
+          <Image src={checkColor} alt="no-check-icon" className="h-10 w-10" />
+        ) : (
+          <Image src={checkWhite} alt="check-icon" className="h-10 w-10" />
+        )}
+      </button>
+      <p
+        onClick={onComplete}
+        className={
+          completed
+            ? "w-full cursor-pointer font-medium text-gris line-through"
+            : "w-full cursor-pointer font-medium text-texto"
+        }
+      >
+        {text}
+      </p>
+      <div className="flex gap-1">
+        <button className="btn-custom" onClick={onEdit}>
+          <Image src={pencil} alt="edit-button" className="h-7 w-7" />
+        </button>
+        <button className="btn-custom" onClick={onDelete}>
+          <Image src={equis} alt="delete-button" className="h-7 w-7" />
+        </button>
       </div>
-    </div>
+    </li>
   );
 }

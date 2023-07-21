@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-title);
   color: #463f3a;
 }
@@ -10,4 +12,10 @@ h1, h2, h3 {
 p {
   font-family: var(--font-text);
   color: #66666e;
+}
+
+@layer components {
+  .btn-custom {
+    @apply hover:ring hover:ring-turquesa p-1 rounded-md;
+  }
 }
