@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 
 //SVG
-import equis from "@/public/delete.svg";
-import pencil from "@/public/edit.svg";
 import checkWhite from "@/public/check-white.svg";
 import checkColor from "@/public/check-color.svg";
+import equis from "@/public/delete.svg";
+import pencil from "@/public/edit.svg";
 
-export function Task({ text, completed, onComplete, onDelete, onEdit }) {
+export function Task({ value, completed, onComplete, onEdit, onRemove }) {
   return (
     <li className="bg-white flex gap-3 items-center px-2 py-1 my-2 rounded-sm">
       <button className="peer" onClick={onComplete}>
@@ -25,16 +25,11 @@ export function Task({ text, completed, onComplete, onDelete, onEdit }) {
             : "w-full cursor-pointer font-medium text-texto"
         }
       >
-        {text}
+        {value}
       </p>
-      <div className="flex gap-1">
-        <button className="btn-custom" onClick={onEdit}>
-          <Image src={pencil} alt="edit-button" className="h-7 w-7" />
-        </button>
-        <button className="btn-custom" onClick={onDelete}>
-          <Image src={equis} alt="delete-button" className="h-7 w-7" />
-        </button>
-      </div>
+      <button className="btn-custom" onClick={onRemove}>
+        <Image src={equis} alt="delete-button" className="h-7 w-7" />
+      </button>
     </li>
   );
 }

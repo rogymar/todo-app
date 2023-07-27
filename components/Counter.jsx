@@ -1,6 +1,9 @@
-import React from "react";
+import { useContext } from "react";
+import { TaskManagerContex } from "@/app/context";
 
-export function Counter({ total, completed }) {
+export function Counter() {
+  const { completedTasks, totalTasks } = useContext(TaskManagerContex);
+
   const congratulations = [
     "¡Felicidades! 🥳 Acabaste tus tareas.",
     "¡Productivo! 😜 Completaste tus tareas.",
@@ -12,9 +15,9 @@ export function Counter({ total, completed }) {
   let randomMessages = Math.floor(Math.random() * congratulations.length);
 
   const validator = () => {
-    if (total === 0) {
-      return <h2 className="text-4xl">¿Seguro no tienes nada qué hacer? 🤔</h2>;
-    } else if (total === completed) {
+    if (totalTasks === 0) {
+      return <h2 className="text-4xl">No tienes tareas pendientes 🤔 </h2>;
+    } else if (totalTasks === completedTasks) {
       return (
         <h2 className="text-4xl">{`${congratulations[randomMessages]}`}</h2>
       );
@@ -23,10 +26,12 @@ export function Counter({ total, completed }) {
         <h2 className="text-4xl">
           Has completado
           <span className="text-turquesa mx-3 hover:text-gris">
-            {completed}
+            {completedTasks}
           </span>
           tareas de
-          <span className="text-turquesa mx-3 hover:text-gris">{total}</span>
+          <span className="text-turquesa mx-3 hover:text-gris">
+            {totalTasks}
+          </span>
         </h2>
       );
     }
