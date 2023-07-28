@@ -7,6 +7,8 @@ import { Task } from "./Task";
 export function TaskList() {
   const { searchTasks, doneTask, removeTask } = useContext(TaskManagerContex);
 
+  console.log('Lista')
+
   return (
     <div className="bg-verde p-0.5 rounded-lg">
       <ul className="m-2 flex-col justify-between items-center">

@@ -24,6 +24,8 @@ export function TaskPage() {
     <>
       <section className="w-full text-center">
         <h1 className="text-7xl">Task Manager</h1>
+        {loading && <TaskLoading />}
+        {error && <TaskError />}
         <Counter />
         <Image
           src={principal}
@@ -40,10 +42,7 @@ export function TaskPage() {
           </Modal>
         )}
 
-        <TaskList>
-          {loading && <TaskLoading />}
-          {error && <TaskError />}
-        </TaskList>
+        <TaskList></TaskList>
       </section>
     </>
   );
