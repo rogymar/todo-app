@@ -23,14 +23,14 @@ export function TaskPage() {
   return (
     <>
       <section className="w-full text-center">
-        <h1 className="text-7xl">Task Manager</h1>
+        <h1 className="text-5xl md:text-7xl">Task Manager</h1>
         {loading && <TaskLoading />}
         {error && <TaskError />}
-        <Counter />
+        {!loading ? <Counter /> : null}
         <Image
           src={principal}
           alt="presentation-image"
-          className="w-full h-auto"
+          className="w-full h-auto hidden lg:block"
         />
       </section>
       <section className="w-full">
@@ -42,7 +42,7 @@ export function TaskPage() {
           </Modal>
         )}
 
-        <TaskList></TaskList>
+        <TaskList />
       </section>
     </>
   );

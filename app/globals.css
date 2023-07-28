@@ -18,4 +18,10 @@ p {
   .btn-custom {
     @apply hover:ring hover:ring-turquesa p-1 rounded-md;
   }
+  .textCustom {
+    @apply text-2xl md:text-4xl font-title;
+  }
+  .spanText {
+    @apply text-turquesa mx-3 hover:text-gris;
+  }
 }

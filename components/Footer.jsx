@@ -2,8 +2,8 @@ import React from "react";
 
 export function Footer() {
   return (
-    <footer className="flex justify-between my-5 mx-10 text-base text-texto font-title">
-      <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
+    <footer className="flex gap-10 items-center justify-between mb-10 mx-10 md:mx-14 lg:mx-12 font-title text-texto text-xs md:text-base">
+      <span className="text-xs md:text-base">{new Date().getFullYear()} &copy; All Rights Reserved</span>
       <p className="font-title">
         Icons in{" "}
         <a

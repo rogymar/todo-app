@@ -17,7 +17,7 @@ export function Searcher() {
       />
       <input
         className="w-full bg-white p-2 rounded-sm outline-gris"
-        placeholder="La lupa no es un botón, busca tareas aquí..."
+        placeholder="Busca tareas, sólo escribe aquí..."
         value={searchValue}
         onChange={(event) => {
           setSearchValue(event.target.value);

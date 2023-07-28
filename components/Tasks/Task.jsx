@@ -5,11 +5,10 @@ import Image from "next/image";
 import checkWhite from "@/public/check-white.svg";
 import checkColor from "@/public/check-color.svg";
 import equis from "@/public/delete.svg";
-import pencil from "@/public/edit.svg";
 
-export function Task({ value, completed, onComplete, onEdit, onRemove }) {
+export function Task({ value, completed, onComplete, onRemove }) {
   return (
-    <li className="bg-white flex gap-3 items-center px-2 py-1 my-2 rounded-sm">
+    <li className="bg-white flex gap-3 items-center px-2 py-1 my-2 rounded-sm text-sm md:text-base">
       <button className="peer" onClick={onComplete}>
         {completed ? (
           <Image src={checkColor} alt="no-check-icon" className="h-10 w-10" />

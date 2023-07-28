@@ -22,7 +22,7 @@ export function FormModal() {
 
   return (
     <form
-      className="flex-col gap-5 m-5 p-10 text-texto text-center fixed top-[280px] left-[500px] rounded-2xl bg-gris"
+      className="flex-col gap-5 m-5 p-5 lg:p-10 text-texto text-center fixed top-[200px] left-[3px] md:top-[300px] md:left-[190px] lg:top-[250px] lg:left-[480px] rounded-2xl bg-gris bg-opacity-90 border-4 border-turquesa"
       onSubmit={onSubmit}
     >
       <label className="font-title">Añade tu nueva tarea.</label>
